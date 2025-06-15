@@ -1,29 +1,25 @@
-const express = require("express");
-const app = express();
+const express = require("express")
+const app = express()
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.json())
+app.use(express.urlencoded({extended: true}))
 
-const { Sequelize } = require("sequelize");
+const Sequalize = require("sequelize")
+const Sequalize = new Sequalize("mysql://root@localhost:3306/joga:sequelize")
 
-const sequelize = new Sequelize("joga", "root", "Mybr41n", {
-    host: "localhost",
-    dialect: "mysql",
-});
-
-sequelize
+Sequalize
     .authenticate()
     .then(() => {
-        console.log("Connected to database");
+        console.log("connect to database")
     })
-    .catch((err) => {
-        console.error("Unable to connect to the database.", err);
-    });
+    .catch(err => {
+        console.error("Unable to connect to the database. ", err)
+    })
 
 app.get("/", (req, res) => {
-    res.json({ message: "Welcome to Sequelize app" });
-});
+    res.json({message: "welcone sequalize app"})
+})
 
 app.listen(3000, () => {
-    console.log("Server running at http://localhost:3000");
-});
+    console.log("Server http:/localhost:3000")
+})
