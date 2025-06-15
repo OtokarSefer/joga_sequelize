@@ -1,36 +1,36 @@
-'use strict'
+"use strict"
 
 module.exports = {
   up (queryInterface, Sequelize) {
     return Promise.all([
-      queryInterface.changeColumn('Articles', 'id', {
+      queryInterface.changeColumn("Articles", "id", {
         type: Sequelize.INTEGER,
         autoIncrement: true,
         primaryKey: true,
         allowNull: false
       }),
-      queryInterface.changeColumn('Articles', 'name', {
+      queryInterface.changeColumn("Articles", "name", {
         type: Sequelize.STRING,
         allowNull: false
       }),
-      queryInterface.changeColumn('Articles', 'slug', {
+      queryInterface.changeColumn("Articles", "slug", {
         type: Sequelize.STRING,
         allowNull: false,
         unique: true
       }),
-      queryInterface.changeColumn('Articles', 'image', {
+      queryInterface.changeColumn("Articles", "image", {
         type: Sequelize.STRING,
         allowNull: false
       }),
-      queryInterface.changeColumn('Articles', 'body', {
+      queryInterface.changeColumn("Articles", "body", {
         type: Sequelize.TEXT,
         allowNull: false
       }),
-      queryInterface.changeColumn('Articles', 'published', {
+      queryInterface.changeColumn("Articles", "published", {
         type: Sequelize.DATE,
         allowNull: false
       }),
-      queryInterface.changeColumn('Articles', 'author_id', {
+      queryInterface.changeColumn("Articles", "author_id", {
         type: Sequelize.INTEGER,
         allowNull: true,
       })
@@ -38,7 +38,7 @@ module.exports = {
   },
   down (queryInterface) {
     return Promise.all([
-      queryInterface.dropTable('Articles')
+      queryInterface.dropTable("Articles")
     ])
   }
 };

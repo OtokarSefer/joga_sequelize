@@ -1,5 +1,5 @@
-'use strict';
-const { Model } = require('sequelize');
+"use strict";
+const { Model } = require("sequelize");
 
 module.exports = (sequelize, DataTypes) => {
   class ArticleTags extends Model {
@@ -11,13 +11,13 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // One tag belongs to one article through ArticleTags
       this.belongsTo(models.Article, {
-        foreignKey: 'articleId',
-        onDelete: 'CASCADE',
+        foreignKey: "articleId",
+        onDelete: "CASCADE",
       });
 
       this.belongsTo(models.Tag, {
-        foreignKey: 'tagId',
-        onDelete: 'CASCADE',
+        foreignKey: "tagId",
+        onDelete: "CASCADE",
       });
     }
   }
@@ -35,7 +35,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     {
       sequelize,
-      modelName: 'ArticleTags',
+      modelName: "ArticleTags",
     }
   );
 

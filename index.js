@@ -2,28 +2,28 @@ const express = require("express")
 const app = express()
 
 app.use(express.json())
-app.use(express.urlencoded({extended: true}))
+app.use(express.urlencoded({ extended: true}));
 
-const Sequalize = require("sequelize")
-const Sequalize = new Sequalize("mysql://root@localhost:3306/joga:sequelize")
+// Connecting to the database
+const Sequelize = require("sequelize")
+const sequelize = new Sequelize("mysql://root@localhost:3306/joga:sequelize")
 
-Sequalize
+sequelize
     .authenticate()
     .then(() => {
-        console.log("connect to database")
+        console.log("Connected to the database")
     })
     .catch(err => {
-        console.error("Unable to connect to the database. ", err)
-    })
+        console.error("Unable to connect to the database because of", err)
+    });
 
-const artivleRouter = require('./routes/article')
-app.use('/', articleRouter);
-app.use('/article', articleRouter)
+const articleRouter = require("./routes/article")
+app.use("/", articleRouter)
+app.use("/article", articleRouter)
+app.use("/author", articleRouter)
+app.use("admin/article", articleRouter)
 
-app.get("/", (req, res) => {
-    res.json({message: "welcone sequalize app"})
-})
 
-app.listen(3000, () => {
-    console.log("Server http:/localhost:3000")
+app.listen(3005, () => {
+    console.log("Server is running on http://localhost:3005")
 })

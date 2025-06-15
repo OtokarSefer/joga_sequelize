@@ -1,8 +1,8 @@
-'use strict';
+"use strict";
 
 module.exports = {
   up(queryInterface, Sequelize) {
-    return queryInterface.bulkInsert('ArticleTags', [
+    return queryInterface.bulkInsert("ArticleTags", [
       {
         articleId: 1,
         tagId: 1,
@@ -49,6 +49,6 @@ module.exports = {
   },
 
   down(queryInterface, Sequelize) {
-    return queryInterface.bulkDelete('ArticleTags');
+    return queryInterface.bulkDelete("ArticleTags");
   }
 };

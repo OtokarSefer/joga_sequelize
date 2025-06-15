@@ -1,7 +1,7 @@
-'use strict';
+"use strict";
 const {
   Model
-} = require('sequelize');
+} = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   const Article = sequelize.define("Article", {
     name: DataTypes.STRING,
@@ -14,8 +14,8 @@ module.exports = (sequelize, DataTypes) => {
 
   Article.associate = models => {
     Article.belongsTo(models.Author, {
-      foreignKey: 'author_id',
-      as: 'author'
+      foreignKey: "author_id",
+      as: "author"
     });
 };
   Article.init({
@@ -41,12 +41,12 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-          model: 'Authors',
-          key: 'id',
+          model: "Authors",
+          key: "id",
         },},},
         {
     sequelize,
-    modelName: 'Article',
+    modelName: "Article",
   });
   return Article;
 };
