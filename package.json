@@ -1,0 +1,25 @@
+{
+  "name": "sequelize",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000s\u0000e\u0000q\u0000u\u0000e\u0000l\u0000i\u0000z\u0000e\u0000\r\u0000 \u0000",
+  "homepage": "https://github.com/OtokarSefer/sequelize#readme",
+  "bugs": {
+    "url": "https://github.com/OtokarSefer/sequelize/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OtokarSefer/sequelize.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "mysql2": "^3.14.1",
+    "sequelize": "^6.37.7"
+  }
+}
